@@ -36,7 +36,7 @@ module.exports = (db) => {
 
   router.get('/api/institutename/:SId', (req, res) => {
     const sid = req.params.SId;
-    const sql = 'SELECT Institute_Name, Regno, Name ,Class_Name  FROM `institute`,`student`,`class` WHERE Class_ID=SClassID AND SInstituteID=InstitutePID AND Regno=? ';
+    const sql = 'SELECT Institute_Name,Institute_Address, Regno, Name ,Class_Name  FROM `institute`,`student`,`class` WHERE Class_ID=SClassID AND SInstituteID=InstitutePID AND Regno=? ';
    	
     
   

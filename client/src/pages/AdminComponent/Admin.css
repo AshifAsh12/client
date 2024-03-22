@@ -373,13 +373,13 @@ nav .a{
 .holiday{
   color: #fff;
   position: absolute;
-  top:5%;
+  top:0;
   left:6%;
 }
 .markeallow{
   color: #fff;
   position: absolute;
-  top:5%;
+  top:0;
   right:6%;
 }
 
@@ -691,6 +691,16 @@ float: right;
     position:relative;
     left:40%;
   }
+  .button-container{
+    left:20%;
+    top:2.6%;
+  }
+  .holiday{
+    display:none;
+  }
+  .markeallow{
+    display: none;
+  }
   header nav{
     position:fixed;
     z-index: 5;
@@ -711,7 +721,17 @@ float: right;
   min-width: 100%;
   min-height: 100%;;
   }
-
+  .Account-Name{
+    left:52%;
+    margin-top: -80px;
+    
+  }
+  .Account-Name h3{
+    font-size: 12px;;
+  }
+  .Account-Name h3 span{
+    font-size: 12px;;
+  }
   header .responsive_bar{
     transform: none;
   }
@@ -758,6 +778,9 @@ float: right;
   nav .a{
     font-size: 1.5rem ;
   }
+  .redo-undo-button button{
+    font-size: 20px;
+  }
   .site-btn{
     padding:3px;
     width:40px;
@@ -778,6 +801,7 @@ float: right;
 
   .drop{
   top:80px;
+  left:-5%;
   
   }
 

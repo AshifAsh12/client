@@ -21,7 +21,7 @@ function AddMarks() {
   const [sdata, setsData] = useState({});
   const [detail, setDetail] = useState([]);
   const [examdata, setExamData] = useState([]);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
 
 
@@ -92,8 +92,8 @@ function AddMarks() {
 
     if (!subject) {
       newerror.errorsubject = "This field is required"
-    }  
-    
+    }
+
     setLoading(true); // Set loading state to true when the form is submitted
 
 
@@ -108,7 +108,7 @@ function AddMarks() {
               ...errordata,
               errormark: `Invalid mark for ${exam}. Maximum marks is ${response.data[0].Maxmarks}`
             });
-            
+
           } else {
             Axios.post(`https://backend-sandy-six.vercel.app/api/addmark/${SId}`, {
               examname: exam,
@@ -135,7 +135,7 @@ function AddMarks() {
           console.error(error);
         });
     }
-    else{
+    else {
       setLoading(false)
     }
   };
@@ -226,9 +226,9 @@ function AddMarks() {
               <p>{errordata.errorsubject}</p>
             </div>
           </div>
-          {loading ?  <div className='load'><DotLoader color="#ffff"/></div> :
-          <button type="submit" className='exam-submit'>Submit</button> }
-          
+          {loading ? <div className='load'><DotLoader color="#ffff" /></div> :
+            <button type="submit" className='exam-submit'>Submit</button>}
+
         </form>
       </div>
 
@@ -281,15 +281,15 @@ function AddMarks() {
                         const threshold = maxMarks * 0.35;
                         const isBelowThreshold = markValue !== -1 && markValue < threshold;
                         const isAbsent = markValue === -1;
-                       // Inside the JSX where the edit button is rendered
-const allowEdit = localStorage.getItem("editbutton") === "true"; // Check the value of the edit button in localStorage
+                        // Inside the JSX where the edit button is rendered
+                        const allowEdit = localStorage.getItem("editbutton") === "true"; // Check the value of the edit button in localStorage
 
-// Conditionally render the edit button based on the value retrieved from localStorage
-const editLink = allowEdit && !isAbsent && markValue > -1 ? (
-  <Link to={`/teacherhomepage/${TId}/edit/${TId}/${SId}/${encodeURIComponent(subject)}/${encodeURIComponent(maxMarkObj ? maxMarkObj.ExamName : '')}`}>
-    <BiSolidEditAlt />
-  </Link>
-) : null;
+                        // Conditionally render the edit button based on the value retrieved from localStorage
+                        const editLink = allowEdit && !isAbsent && markValue > -1 ? (
+                          <Link to={`/teacherhomepage/${TId}/edit/${TId}/${SId}/${encodeURIComponent(subject)}/${encodeURIComponent(maxMarkObj ? maxMarkObj.ExamName : '')}`}>
+                            <BiSolidEditAlt />
+                          </Link>
+                        ) : null;
 
 
                         // Display markValue if it's not null and not -1, else display 'NE'

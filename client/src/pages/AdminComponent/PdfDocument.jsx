@@ -46,6 +46,9 @@ const PdfDocument = ({ data, examNames }) => (
                 <Text>{examName}</Text>
               </View>
             ))}
+            <View style={styles.tableCell}><Text>Total</Text></View>
+            <View style={styles.tableCell}><Text>Percentage</Text></View>
+            <View style={styles.tableCell}><Text>Result</Text></View>
           </View>
           {Object.entries(data).map(([subject, marks], subjectIndex) => (
             <View style={styles.tableRow} key={subjectIndex}>
@@ -55,6 +58,31 @@ const PdfDocument = ({ data, examNames }) => (
                   <Text>{marks[examName]}</Text>
                 </View>
               ))}
+              <View style={styles.tableCell}><Text>{Object.values(marks).reduce((acc, curr) => acc + curr, 0)}</Text></View>
+              <View style={styles.tableCell}>
+                <Text>
+                  {(() => {
+                    const totalMarks = Object.values(marks).reduce((acc, curr) => acc + curr, 0);
+                    const maxMarks = Object.values(data[subject]).reduce((acc, curr) => acc + (curr !== -1 ? 100 : 0), 0);
+                    const percentage = (totalMarks / maxMarks) * 100;
+                    return isNaN(percentage) ? 'N/A' : percentage.toFixed(2) + '%';
+                  })()}
+                </Text>
+              </View>
+              <View style={styles.tableCell}>
+                <Text>
+                  {(() => {
+                    const totalMarks = Object.values(marks).reduce((acc, curr) => acc + curr, 0);
+                    const maxMarks = Object.values(data[subject]).reduce((acc, curr) => acc + (curr !== -1 ? 100 : 0), 0);
+                    const percentage = (totalMarks / maxMarks) * 100;
+                    if (isNaN(percentage)) return 'N/A';
+                    if (percentage < 35) return 'Fail';
+                    if (percentage >= 35 && percentage < 50) return 'Pass';
+                    if (percentage >= 50 && percentage < 70) return 'First Class';
+                    if (percentage >= 70 && percentage <= 100) return 'Distinction';
+                  })()}
+                </Text>
+              </View>
             </View>
           ))}
         </View>

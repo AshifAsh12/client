@@ -104,28 +104,8 @@ body {
     
   }
 
- .ModelBox{
-  position:absolute;
-  top:40%;
-  left:40%;
-  text-align: center;
-  padding: 20px;
-  min-width: 200px;
-  min-height: 150px;
-  border: 1px solid black;
-  background: rgb(0, 0, 0);
-  color:white;
-  font-weight: 600px;
-  font-size: 22px;
+ 
 
-  }
-
-  .Model-Button{
-    background: #d82a4e;
-    color: white;
-    border: none;
-    width:80px
-  }
 
   .site-logo{
     position: relative;
@@ -296,23 +276,25 @@ body {
     .login-box {
       margin-left: 10px;
       margin-right: 10px;
+      margin-top: 20px;
       height:600px;
       background: transparent;
-      top:0;
+      top:20%;
       left:0;
       border-radius:0;
-     border: 1px solid black;
+      border:none;
+
     }
    
     .laptop {
-      font-size: 3em;;
+      font-size: 2em;;
     }
 
     .wheel1{
-      font-size: 1.5em;
+      font-size: 0.9em;
     }
     .wheel2{
-      font: 0.2em;
+      font-size: 0.6em;
     }
     
     .input-box {
@@ -320,27 +302,31 @@ body {
       
 
     }
+    .site-logo{
+      width:100px;
+    }
     .style-icon{
-      top:7%;
+      top:5%;
+      right:20%;
     }
     .login-img{
-      top:0;
-      left:20px;
-      width:180px;
+      top:1.5%;
+      left:6%;
+      width:130px;
     }
     .input-box input{
 
-      font-size: 1rem;
+      font-size: 0.7rem;
 
     }
     .login-box h3{
-      font-size: 23px;
+      font-size: 17px;
     }
     .remember-forgot{
-      font-size: 0.8em;
+      font-size: 0.5em;
     }
     .register-link{
-      font-size: 0.8em;
+      font-size: 0.5em;
     }
     .login-box button{
       font-size: 0.8em;
